@@ -123,6 +123,9 @@
     },
     "solidity-compiler": {
       "tags": []
+    },
+    "remix-ui-home-tab": {
+      "tags": []
     }
-}
+  }
 }
