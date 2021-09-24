@@ -188,6 +188,7 @@ class FileManager extends Plugin {
    * @returns {void}
    */
   async writeFile (path, data) {
+    console.log('writeFile:', path)
     try {
       path = this.normalize(path)
       path = this.limitPluginScope(path)

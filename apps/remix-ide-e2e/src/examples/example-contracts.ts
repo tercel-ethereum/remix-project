@@ -307,10 +307,47 @@ contract BallotTest {
 }
 `
 
+
+const newOpcodes = `// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.9.0;
+
+contract NewOpcodes {
+    event WriteApi(address indexed user, bytes data);
+    uint public result=1;
+    function trevert() external pure {
+        revert('test revert');
+    }
+
+    function getRandom() external view returns (uint256) {
+        return block.random;
+    }
+    
+    function callmyopcode() external view returns (uint256) {
+        return myopcode("dog");
+    }
+    
+    function callapi() external view returns (uint256, uint256) {
+        return extopenapi("http://localhost:3000/demo");
+    }
+    
+    function writemyopcode() external returns (uint256) {
+        emit WriteApi(msg.sender, "writeapi result");
+        result = myopcode("dog");
+        return result;
+    }
+
+    function testsha3r() external view returns (bytes32) {
+        return keccak256("abc");
+    }
+}
+`
+
 export default {
   storage: { name: '1_Storage.sol', content: storage },
   owner: { name: '2_Owner.sol', content: owner },
   ballot: { name: '3_Ballot.sol', content: ballot },
   ballot_0_4_11: { name: 'ballot_0_4_11.sol', content: ballot_0_4_11 },
-  ballot_test: { name: 'tests/4_Ballot_test.sol', content: ballotTest }
+  ballot_test: { name: 'tests/4_Ballot_test.sol', content: ballotTest },
+  newOpcodes: { name: 'tests/5_NewOpcodes.sol', content: newOpcodes }
 }

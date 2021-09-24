@@ -281,7 +281,7 @@ class FileProvider {
 
     window.remixFileSystem.readdir(path, (error, files) => {
       var ret = {}
-
+      console.log('resolveDirectory:', path, files)
       if (files) {
         files.forEach(element => {
           path = path.replace(/^\/|\/$/g, '') // remove first and last slash

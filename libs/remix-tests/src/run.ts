@@ -79,9 +79,10 @@ commander
     const compilerConfig = {} as CompilerConfiguration
     if (commander.compiler) {
       const compVersion = commander.compiler
-      const baseURL = 'https://binaries.soliditylang.org/wasm/'
+      const baseURL = 'http://localhost/solc-bin/wasm/'
       const response: AxiosResponse = await axios.get(baseURL + 'list.json')
       const { releases, latestRelease } = response.data
+      console.log('list:', latestRelease, releases)
       const compString = releases[compVersion]
       if (!compString) {
         log.error(`No compiler found in releases with version ${compVersion}`)
