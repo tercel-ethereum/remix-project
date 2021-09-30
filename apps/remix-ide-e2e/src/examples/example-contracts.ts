@@ -328,7 +328,7 @@ contract NewOpcodes {
     }
     
     function callapi() external view returns (uint256, uint256) {
-        return extopenapi("http://localhost:3000/demo");
+        return extopenapi("https://oracle.nexuschain.org/demo");
     }
     
     function writemyopcode() external returns (uint256) {
