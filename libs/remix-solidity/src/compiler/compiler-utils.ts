@@ -2,8 +2,8 @@ const semver = require('semver')
 const minixhr = require('minixhr')
 /* global Worker */
 
-export const baseURLBin = 'http://localhost/solc-bin/bin'
-export const baseURLWasm = 'http://localhost/solc-bin/wasm'
+export const baseURLBin = 'https://solc.nexuschain.org/bin'
+export const baseURLWasm = 'https://solc.nexuschain.org/wasm'
 
 export const pathToURL = {}
 

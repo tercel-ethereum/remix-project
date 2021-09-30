@@ -79,7 +79,7 @@ commander
     const compilerConfig = {} as CompilerConfiguration
     if (commander.compiler) {
       const compVersion = commander.compiler
-      const baseURL = 'http://localhost/solc-bin/wasm/'
+      const baseURL = 'https://solc.nexuschain.org/wasm/'
       const response: AxiosResponse = await axios.get(baseURL + 'list.json')
       const { releases, latestRelease } = response.data
       console.log('list:', latestRelease, releases)
